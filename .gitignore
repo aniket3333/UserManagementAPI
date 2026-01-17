@@ -1,0 +1,42 @@
+# =========================
+# .NET / ASP.NET Core
+# =========================
+bin/
+obj/
+**/bin/
+**/obj/
+
+# =========================
+# Visual Studio
+# =========================
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Secrets
+# =========================
+appsettings.Development.json
+appsettings.Production.json
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
