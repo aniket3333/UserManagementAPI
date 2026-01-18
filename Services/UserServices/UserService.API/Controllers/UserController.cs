@@ -6,7 +6,7 @@ using UserService.Domain.Entities;
 
 namespace UserService.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/users")]
     [ApiController]
     public class UserController : ControllerBase
     {
