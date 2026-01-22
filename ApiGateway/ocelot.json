@@ -43,7 +43,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/categories/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
