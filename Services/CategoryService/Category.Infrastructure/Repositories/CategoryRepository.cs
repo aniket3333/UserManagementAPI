@@ -33,5 +33,18 @@ namespace Category.Infrastructure.Repositories
         public async Task<IEnumerable<Categor>> GetAllAsync()
             => await _context.Categories.ToListAsync();
 
+        public async Task UpdateAsync(Categor category){
+              _context.Categories.Update(category);
+             await _context.SaveChangesAsync();
+        }
+
+public async Task<IEnumerable<Categor>> GetDropdownAsync(){
+return await _context.Categories.Where(x => x.IsActive).ToListAsync();
+        }
+
+public async Task DeleteAsync(Categor category){
+            _context.Categories.Remove(category);
+await _context.SaveChangesAsync();
+        }
     }
 }

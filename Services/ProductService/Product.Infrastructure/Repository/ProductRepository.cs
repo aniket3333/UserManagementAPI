@@ -61,7 +61,6 @@ namespace Product.Infrastructure.Repository
 
             if (existingProduct == null)
                 return null;
-
             existingProduct.Name = product.Name;
             existingProduct.Description = product.Description;
             existingProduct.Price = product.Price;
@@ -72,7 +71,6 @@ namespace Product.Infrastructure.Repository
             existingProduct.ImageUrl = product.ImageUrl;
             existingProduct.IsActive = product.IsActive;
             existingProduct.UpdatedAt = DateTime.UtcNow;
-
             await _context.SaveChangesAsync();
 
             return existingProduct;

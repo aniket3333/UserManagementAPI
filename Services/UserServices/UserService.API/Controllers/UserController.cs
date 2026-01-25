@@ -28,7 +28,10 @@ namespace UserService.API.Controllers
                 Id = u.Id,
                 Name = u.Name,
                 Email = u.Email,
-                IsActive = u.IsActive
+                RoleId = u.RoleId,
+                Role = u.Role,
+                IsActive = u.IsActive,
+                CreatedAt = u.CreatedAt
             });
 
             return Ok(result);
@@ -46,6 +49,8 @@ namespace UserService.API.Controllers
                 Id = user.Id,
                 Name = user.Name,
                 Email = user.Email,
+                RoleId = user.RoleId,
+                Role = user.Role,
                 IsActive = user.IsActive
             });
         }
@@ -54,17 +59,30 @@ namespace UserService.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(UserCreateDto dto)
         {
+            var passwordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password);
+            var role = await _repository.GetRoleByIdAsync(dto.RoleId);
+
             var user = new User
             {
                 Name = dto.Name,
                 Email = dto.Email,
+                PasswordHash = passwordHash,
+                RoleId = dto.RoleId,
+                Role = role.Role,
                 IsActive = true
             };
 
             await _repository.AddAsync(user);
             await _repository.SaveAsync();
-
-            return Ok(user);
+            return Ok(new
+            {
+                user.Id,
+                user.Name,
+                user.Email,
+                user.RoleId,
+                user.IsActive,
+                user.CreatedAt
+            });
         }
 
         // PUT: api/users/1
@@ -73,9 +91,11 @@ namespace UserService.API.Controllers
         {
             var user = await _repository.GetByIdAsync(id);
             if (user == null) return NotFound();
-
+            var role = await _repository.GetRoleByIdAsync(dto.RoleId);
             user.Name = dto.Name;
             user.Email = dto.Email;
+            user.RoleId = dto.RoleId;
+            user.Role = role.Role;
 
             await _repository.UpdateAsync(user);
             await _repository.SaveAsync();
@@ -95,6 +115,7 @@ namespace UserService.API.Controllers
 
             return NoContent();
         }
+
 
     }
 }

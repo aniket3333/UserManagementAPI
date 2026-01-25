@@ -74,7 +74,7 @@ namespace Product.API.Controller
         }
 
         // UPDATE PRODUCT
-        [HttpPut("{id:int}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] UpdateProductDto dto)
         {
             if (!ModelState.IsValid)

@@ -12,5 +12,9 @@ namespace Category.Application.Interfaces
         Task<Categor> AddAsync(Categor category);
         Task<Categor?> GetByIdAsync(int id);
         Task<IEnumerable<Categor>> GetAllAsync();
+        Task<IEnumerable<Categor>> GetDropdownAsync();
+        Task UpdateAsync(Categor category);
+
+Task DeleteAsync(Categor category);
     }
 }
