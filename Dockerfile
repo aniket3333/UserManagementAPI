@@ -11,7 +11,9 @@ WORKDIR /src
 COPY . .
 
 # Restore NuGet packages
-RUN dotnet restore MySolution.sln
+RUN dotnet restore UserManagement.sln
+
+
 
 # Build & publish ApiGateway project
 RUN dotnet publish src/ApiGateway/ApiGateway.csproj -c Release -o /app/publish
