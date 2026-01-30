@@ -16,7 +16,7 @@ RUN dotnet restore UserManagement.sln
 
 
 # Build & publish ApiGateway project
-RUN dotnet publish src/ApiGateway/ApiGateway.csproj -c Release -o /app/publish
+RUN dotnet publish ApiGateway/ApiGateway.csproj -c Release -o /app/publish
 
 # 3️⃣ Final runtime image
 FROM base AS final
