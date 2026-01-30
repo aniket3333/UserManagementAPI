@@ -71,7 +71,11 @@ namespace Product.Infrastructure.Repository
             existingProduct.ImageUrl = product.ImageUrl;
             existingProduct.IsActive = product.IsActive;
             existingProduct.UpdatedAt = DateTime.UtcNow;
-            await _context.SaveChangesAsync();
+          
+try{
+                await _context.SaveChangesAsync();
+            }
+            catch(Exception ex){ }
 
             return existingProduct;
         }
@@ -90,6 +94,8 @@ namespace Product.Infrastructure.Repository
             await _context.SaveChangesAsync();
             return true;
         }
+
+
     }
 
 }
