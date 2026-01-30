@@ -20,6 +20,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4D56FAAB-A587-4423-B38D-D592F1338394}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		Dockerfile = Dockerfile
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CategoryService", "CategoryService", "{2404649D-5CEB-4558-85F0-5962AC9381EC}"
@@ -36,13 +37,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserService", "UserService"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProductService", "ProductService", "{CD27546E-6E55-476A-8EF2-64A9C71194CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.API", "Services\ProductService\Product.API\Product.API.csproj", "{175E207B-AC9F-4C64-9946-B98918064F71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Product.API", "Services\ProductService\Product.API\Product.API.csproj", "{175E207B-AC9F-4C64-9946-B98918064F71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.Application", "Services\ProductService\Product.Application\Product.Application.csproj", "{6685A31B-D876-444A-8D7C-32DE9F81EE99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Product.Application", "Services\ProductService\Product.Application\Product.Application.csproj", "{6685A31B-D876-444A-8D7C-32DE9F81EE99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.Domain", "Services\ProductService\Product.Domain\Product.Domain.csproj", "{007555F4-AB8C-44D2-824C-B506D214C046}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Product.Domain", "Services\ProductService\Product.Domain\Product.Domain.csproj", "{007555F4-AB8C-44D2-824C-B506D214C046}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.Infrastructure", "Services\ProductService\Product.Infrastructure\Product.Infrastructure.csproj", "{53D808DC-5B75-4E69-B978-133B9F108188}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Product.Infrastructure", "Services\ProductService\Product.Infrastructure\Product.Infrastructure.csproj", "{53D808DC-5B75-4E69-B978-133B9F108188}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
