@@ -1,0 +1,22 @@
+﻿using Product.Domain.Entities.OrderService.Domain.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Product.Domain.Entities
+{
+    public class Order
+    {
+        public int Id { get; set; }
+        public int UserId { get; set; }
+
+        public decimal TotalAmount { get; set; }
+        public string Status { get; set; } = "Pending";
+
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        public List<OrderItem> Items { get; set; } = new();
+    }
+}

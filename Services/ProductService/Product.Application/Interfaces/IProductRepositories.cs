@@ -22,6 +22,8 @@ namespace Product.Application.Interfaces
 
         // DELETE
         Task<bool> DeleteAsync(int id);
+
+
     }
 
 }

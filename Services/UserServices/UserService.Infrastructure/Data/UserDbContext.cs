@@ -16,5 +16,8 @@ namespace UserService.Infrastructure.Data
         }
 
         public DbSet<User> Users => Set<User>();
+public DbSet<UserRole> Roles => Set<UserRole>();
+        public DbSet<Permission> Permissions { get; set; }
+        public DbSet<RolePermission> RolePermissions { get; set; }
     }
 }
